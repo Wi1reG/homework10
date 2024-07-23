@@ -13,7 +13,8 @@ public class Main {
         if (clientOs == 0 && clientDeviceYear >= 2015) {
             System.out.println("Установите версию приложения для iOS по ссылке");
         } else if (clientOs == 0 && clientDeviceYear < 2015) {
-            System.out.println("Установите облегченную версию приложения для iOS по ссылке");}
+            System.out.println("Установите облегченную версию приложения для iOS по ссылке");
+        }
 
         if (clientOs == 1 && clientDeviceYear >= 2015) {
             System.out.println("Установите версию приложения для Android по ссылке");
@@ -29,12 +30,10 @@ public class Main {
         } else if (deliveryDistance >= 20 && deliveryDistance < 60) {
             day = day + 1;
             System.out.println("На доставку карты потребуется " + day + " дня");
-        }
-        else if (deliveryDistance >= 60 && deliveryDistance <= 100) {
+        } else if (deliveryDistance >= 60 && deliveryDistance <= 100) {
             day = day + 2;
             System.out.println("На доставку карты потребуется " + day + " дня");
-        }
-        else {
+        } else {
             System.out.println("Доставки карты нет");
         }
     }
@@ -42,7 +41,7 @@ public class Main {
 
     public static void main(String[] args) {
         chekYear(2020);
-        chekOS(0,2001);
+        chekOS(0, 2001);
         chekDistance(95);
     }
 }
