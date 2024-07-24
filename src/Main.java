@@ -3,10 +3,17 @@ import java.time.LocalDate;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
+
+    public static void main(String[] args) {
+        checkYear(2024);
+        checkOS(0);
+        checkDistance(95, 1);
+    }
+
     public static void checkYear(int year) {
         if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
             System.out.println(year + " год является високосным");
-        } else if (year != 0) {
+        } else {
             System.out.println(year + " год не является високосным");
         }
     }
@@ -26,8 +33,7 @@ public class Main {
         }
     }
 
-    public static void checkDistance(int deliveryDistance) {
-        int day = 1;
+    public static void checkDistance(int deliveryDistance, int day) {
         if (deliveryDistance < 20) {
             System.out.println("На доставку карты потребуется " + day + " день");
         } else if (deliveryDistance >= 20 && deliveryDistance < 60) {
@@ -42,9 +48,4 @@ public class Main {
     }
 
 
-    public static void main(String[] args) {
-        checkYear(2020);
-        checkOS(0);
-        checkDistance(95);
-    }
 }
