@@ -7,7 +7,13 @@ public class Main {
     public static void main(String[] args) {
         checkYear(2024);
         checkOS(0);
-        checkDistance(95, 1);
+        int day = calculateDistance(95);
+        System.out.println("Дней до доставки карты: " + day);
+        if (day == 0) {
+            System.out.println("Доставки нет");
+        }
+
+
     }
 
     public static void checkYear(int year) {
@@ -33,18 +39,22 @@ public class Main {
         }
     }
 
-    public static void checkDistance(int deliveryDistance, int day) {
+    public static int calculateDistance(int deliveryDistance) {
+        int day = 1;
         if (deliveryDistance < 20) {
-            System.out.println("На доставку карты потребуется " + day + " день");
+            return day;
         } else if (deliveryDistance >= 20 && deliveryDistance < 60) {
             day = day + 1;
-            System.out.println("На доставку карты потребуется " + day + " дня");
+            return day;
         } else if (deliveryDistance >= 60 && deliveryDistance <= 100) {
             day = day + 2;
-            System.out.println("На доставку карты потребуется " + day + " дня");
-        } else {
-            System.out.println("Доставки карты нет");
+            return day;
         }
+        if (deliveryDistance > 100) {
+            day--;
+            return day;
+        }
+        return day;
     }
 
 
